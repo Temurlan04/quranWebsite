@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
+}
+/* Bu header kodi */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.promo {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.learn-more {
+  margin-left: 10px;
+  color: #5aa3a3;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.learn-more i {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.all-suras-btn {
+  background-color: white;
+  border: 1px solid #5aa3a3;
+  color: #5aa3a3;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.all-suras-btn:hover {
+  background-color: #f0f7f7;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.icon-button:hover {
+  background-color: #f0f0f0;
+}
+
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-center {
+    display: none;
+  }
+
+  .all-suras-btn {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+
+  .icon-button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .all-suras-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Bu cardning css kodi */
+
+.container {
+  max-width: 100vw;
+  max-height: 100vh;
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 ta ustun */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.surah-card {
+  background-color: white;
+  max-width: 550px;
+  border-radius: 12px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.surah-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.surah-card:hover .surah-name {
+  color: #2a9d8f;
+}
+
+.surah-card:hover .number-badge {
+  background-color: #2a9d8f;
+}
+
+.surah-card:hover .number-badge span {
+  color: aliceblue;
+}
+
+.surah-card:hover .surah-translation {
+  color: #2a9d8f;
+}
+
+.surah-card:hover .ayah-count {
+  color: #2a9d8f;
+}
+
+.number-badge {
+  background-color: #f8f8f8;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transform: rotate(45deg);
+  margin-right: 25px;
+}
+
+.number-badge span {
+  transform: rotate(-45deg);
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.surah-info {
+  flex: 1;
+}
+
+.surah-name {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.surah-translation {
+  color: #777;
+  font-size: 16px;
+}
+
+.arabic-info {
+  text-align: right;
+}
+
+.arabic-name {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.ayah-count {
+  color: #777;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .surah-card {
+    padding: 15px;
+  }
+
+  .number-badge {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+  }
+
+  .number-badge span {
+    font-size: 22px;
+  }
+
+  .surah-name {
+    font-size: 20px;
+  }
+
+  .arabic-name {
+    font-size: 24px;
+  }
+}
+
+/* Oyatni css kodi */
+
+@font-face {
+  font-family: "Amiri";
+  src: url("https://fonts.googleapis.com/css2?family=Amiri&display=swap");
+}
+
+@font-face {
+  font-family: "Scheherazade";
+  src: url("https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap");
+}
+
+.ayath-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 90px 20px;
+  font-family: "Amiri", "Scheherazade", serif;
+  margin: 0 auto;
+}
+
+/* Surah Title */
+.surah-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.surah-title h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  font-family: "Scheherazade", serif;
+}
+
+/* Bismillah */
+.bismillah {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.bismillah h2 {
+  font-size: 28px;
+  font-weight: normal;
+  color: #000;
+  font-family: "Scheherazade", serif;
+  line-height: 1.6;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.info-btn,
+.audio-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.info-btn {
+  color: #000;
+}
+
+.info-btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.audio-btn {
+  color: #5aacdb;
+}
+
+.audio-btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Quran Text */
+.quran-text {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.verse {
+  font-size: 24px;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-family: "Scheherazade", serif;
+}
+
+.arabic-text {
+  color: #000;
+}
+
+.verse-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin: 0 5px;
+  vertical-align: middle;
+  color: #666;
+  background-color: #fff;
+}
+
+/* Page Number */
+.page-number {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-top: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .surah-title h1 {
+    font-size: 28px;
+  }
+
+  .bismillah h2 {
+    font-size: 24px;
+  }
+
+  .verse {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .surah-title h1 {
+    font-size: 24px;
+  }
+
+  .bismillah h2 {
+    font-size: 20px;
+  }
+
+  .verse {
+    font-size: 18px;
+  }
+
+  .verse-number {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .controls {
+    margin-bottom: 30px;
+  }
+
+  .info-btn,
+  .audio-btn {
+    font-size: 14px;
+  }
+}
