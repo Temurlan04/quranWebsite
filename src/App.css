@@ -20,7 +20,7 @@ body {
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 1000;
+  z-index: 1001;
 }
 /* Bu header kodi */
 .navbar-left {
